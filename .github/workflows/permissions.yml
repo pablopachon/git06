@@ -1,16 +1,16 @@
-name: learning permisson
-    on: push
-    jobs:
-      test-permissions:
-        runs-on: ubuntu-latest
-        permissions:
-          contents: read
-          issues: write
-        steps:
-          - name: Check out repository
-            uses: actions/checkout@v3
+name: lo que sea sobre learning
+on: push
+jobs:
+  test-permissions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
 
-          - name: Verify permissions
-            run: |
-              echo "Contents permission: ${{ github.token.permissions.contents }}"
-              echo "Issues permission: ${{ github.token.permissions.issues }}"
+      - name: Verify permissions
+        run: |
+          echo "Contents permission: ${{ github.token.permissions.contents }}"
+          echo "Issues permission: ${{ github.token.permissions.issues }}"
